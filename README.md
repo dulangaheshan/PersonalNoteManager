@@ -259,6 +259,12 @@
 
 * MySql is RDBMS and it will make easy to maintain futher requirments which may conatain many entites and relationships 
 
+# improvements
+
+*   integrate x-unit for Unit-testing
+*   use visual studio or vs code [extension](https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer) for run test cases
+
+
 
 
 
