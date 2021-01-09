@@ -43,6 +43,12 @@
     ```
 
 # Feature and API End Points
+
+### Assumptions
+*   user and note contain one-to-many relationship
+*   it's require userId for confirm update,delete notes by the same user
+ 
+
 ## postman [collection](https://www.getpostman.com/collections/8b5d7da66f4ac58c158e)
 
 *   Create User
