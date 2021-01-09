@@ -1,0 +1,31 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:9562",
+      "sslPort": 44303
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "personalnotemanager",
+      "environmentVariables": {
+        "DOTNET_CONSOLE_ENV": "Production",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "CordFortPersonalNoteManager": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "personalnotemanager",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    }
+  }
+}
