@@ -16,5 +16,6 @@ namespace CordFortPersonalNoteManager.Contracts
     public interface IUserRepository : IRepositoryBase<User>
     {
         IEnumerable<User> GetAllUsers();
+        void CreateNote(User User);
     }
 }

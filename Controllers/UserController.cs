@@ -9,7 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using CordFortPersonalNoteManager.Contracts;
+using CordFortPersonalNoteManager.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,12 +23,14 @@ namespace CordFortPersonalNoteManager.Controllers
     {
         // GET: api/User
         private IRepositoryWrapper _repository;
-        public UserController(IRepositoryWrapper repository)
+        private IMapper _mapper;
+        public UserController(IRepositoryWrapper repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
         [HttpGet]
-        public IActionResult GetAllOwners()
+        public IActionResult GetAllUsers()
         {
             try
             {
@@ -48,8 +52,32 @@ namespace CordFortPersonalNoteManager.Controllers
 
         // POST: api/User
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult CreateNote([FromBody]User user)
         {
+            try
+            {
+                if (user == null)
+                {
+                    return BadRequest("User object is null");
+                }
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Invalid model object");
+                }
+
+
+
+                var UserEntity = _mapper.Map<User>(user);
+                _repository.User.CreateUser(UserEntity);
+                _repository.Save();
+                var CreatedNote = _mapper.Map<User>(UserEntity);
+                return Ok(UserEntity);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "Internal server error");
+            }
         }
 
         // PUT: api/User/5

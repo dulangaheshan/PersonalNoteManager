@@ -21,9 +21,15 @@ namespace CordFortPersonalNoteManager.Repository
     : base(repositoryContext)
         {
         }
+
+        public void CreateUser(User user)
+        {
+            Create(user);
+        }
+
         /*
-        *select all users
-        */
+*select all users
+*/
         public IEnumerable<User> GetAllUsers()
         {
             return FindAll()
