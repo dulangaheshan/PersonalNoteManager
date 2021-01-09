@@ -28,6 +28,13 @@ namespace CordFortPersonalNoteManager
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                })
+            //.ConfigureAppConfiguration(appConfig =>
+            //{
+
+            //    appConfig.AddJsonFile($"appsettings.json", false, true);
+            //    appConfig.AddJsonFile($"appsettings{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", false, true);
+
+            //});
     }
 }

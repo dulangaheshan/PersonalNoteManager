@@ -9,6 +9,7 @@ using CordFortPersonalNoteManager.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.IO.Packaging;
 using System.Linq;
 using System.Threading.Tasks;
@@ -57,7 +58,7 @@ namespace CordFortPersonalNoteManager.utils
 
         private void AddFileToZip(string zipFilename, string fileToAdd)
         {
-            using (Package zip = System.IO.Packaging.Package.Open(zipFilename, FileMode.OpenOrCreate))
+            using (Package zip = Package.Open(zipFilename, FileMode.OpenOrCreate))
             {
                 string destFilename = ".\\" + Path.GetFileName(fileToAdd);
                 Uri uri = PackUriHelper.CreatePartUri(new Uri(destFilename, UriKind.Relative));
@@ -104,6 +105,43 @@ namespace CordFortPersonalNoteManager.utils
             if (File.Exists(path))
             {
                 File.Delete(path);
+            }
+        }
+
+
+        public Note UnZip(String path)
+        {
+            String content = "";
+            String title = "";
+            using (var za = ZipFile.OpenRead(path))
+            {
+                var result = from currEntry in za.Entries
+                             where Path.GetDirectoryName(currEntry.FullName).Contains(".txt")
+                             select currEntry;
+                foreach (var entry in za.Entries)
+                {
+                    if (entry.FullName.Contains(".txt"))
+                    {
+                        using (var r = new StreamReader(entry.Open()))
+                        {
+                            Stream s = entry.Open();
+                            var sr = new StreamReader(s);
+                            var data = sr.ReadLine();
+                            if(data.Contains("Title :"))
+                            {
+                                title = data.ToString().Split(":")[1];
+                            }
+                            else
+                            {
+                                content += data.ToString();
+                            }
+                           
+                        }
+                    }
+ 
+                }
+
+                return new Note{ Content=content, Title = title};
             }
         }
     }

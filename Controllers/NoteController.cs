@@ -358,5 +358,50 @@ namespace CordFortPersonalNoteManager.Controllers
             }
 
         }
+
+
+        [Route("user/unarchived/{userId}/{noteId}")]
+        [HttpGet]
+        public IActionResult UnArchived(int noteId, int userId)
+        {
+            try
+            {
+                var noteEntity = _repository.Note.GetSpecificNote(noteId, userId);
+                if (noteEntity == null)
+                {
+                    return NotFound();
+                }
+
+                if (noteEntity.IsArchived)
+                {
+                    FileManager sw = new FileManager();
+                    Note note = sw.UnZip(noteEntity.DocumentPath);
+                    sw.DeleteFiles(noteEntity.DocumentPath);
+
+                
+                    noteEntity.DocumentPath = "";
+                    noteEntity.Content = note.Content;
+                    noteEntity.IsArchived = false;
+                    noteEntity.Title = note.Title;
+
+
+                    _repository.Note.UpdateNote(noteEntity);
+                    _repository.Save();
+                    return Ok("Note UnArchived Success");
+                }
+                else
+                {
+                    return Ok("Note Alredy UNArchived");
+                }
+                //  _mapper.Map(note, noteEntity);
+
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "Internal server error");
+            }
+
+        }
     }
 }
