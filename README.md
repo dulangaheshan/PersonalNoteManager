@@ -43,7 +43,14 @@
     ```
 
 # Feature and API End Points
+
+### Assumptions
+*   user and note contain one-to-many relationship
+*   it's require userId for confirm update,delete notes by the same user
+ 
+
 ## postman [collection](https://www.getpostman.com/collections/8b5d7da66f4ac58c158e)
+or inside repo refer PersonalNoteManager.postman_collection,json file
 
 *   Create User
 
@@ -258,6 +265,12 @@
 *   .NET Core framework is high performance. With recent updates the code gets much more optimized which improves performance at the very end
 
 * MySql is RDBMS and it will make easy to maintain futher requirments which may conatain many entites and relationships 
+
+# improvements
+
+*   integrate x-unit for Unit-testing
+*   use visual studio or vs code [extension](https://marketplace.visualstudio.com/items?itemName=formulahendry.dotnet-test-explorer) for run test cases
+
 
 
 

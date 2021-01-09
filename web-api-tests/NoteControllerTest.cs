@@ -1,4 +1,11 @@
-﻿using AutoMapper;
+﻿/**
+ * @author [D.5haN]
+ * @email [dulangah2@gmail.com]
+ * @create date 2021-01-10 02:11:50
+ * @modify date 2021-01-10 02:11:50
+ * @desc [unit test for Note Controller]
+ */
+using AutoMapper;
 using CordFortPersonalNoteManager.Contracts;
 using CordFortPersonalNoteManager.Controllers;
 using CordFortPersonalNoteManager.Models;
@@ -17,6 +24,12 @@ namespace web_api_tests
         {
             _controller = new NoteController(_repository, _mapper);
         }
+
+        /**
+            * CreateNote
+            ** Unit test for create note correct parameters 
+            * params@{Note}
+        */
         [Fact]
         public void CreateNote()
         {
@@ -35,7 +48,11 @@ namespace web_api_tests
             Assert.IsType<OkObjectResult>(badResponse);
 
         }
-
+        /**
+            * CreateNoteWithoutUserID
+            ** Unit test for create note with out user ID 
+            * params@{Note}
+        */
         [Fact]
         public void CreateNoteWithoutUserID()
         {
@@ -54,7 +71,11 @@ namespace web_api_tests
 
         }
 
-
+        /**
+            * UpdateNoteWithoutUserID
+            ** Unit test for update note without user Id
+            * params@{userId, nodeId, Note}
+        */
         [Fact]
         public void UpdateNoteWithoutUserID()
         {
@@ -70,6 +91,22 @@ namespace web_api_tests
             var badResponse = _controller.UpdateNote(1, 4, note);
             // Assert
             Assert.IsType<BadRequestObjectResult>(badResponse);
+
+        }
+
+        /**
+            * DeleteNote
+            ** Unit test for Delete note with user Id and noteId
+            * params@{userId, nodeId, Note}
+        */
+        [Fact]
+        public void Delete()
+        {
+
+            // Act
+            var badResponse = _controller.Delete(1,4);
+            // Assert
+            Assert.IsType<OkObjectResult>(badResponse);
 
         }
 

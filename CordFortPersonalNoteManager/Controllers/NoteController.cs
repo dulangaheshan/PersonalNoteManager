@@ -221,7 +221,8 @@ namespace CordFortPersonalNoteManager.Controllers
                  _repository.Note.CreateNote(NoteEntity);
                   _repository.Save();
                   var CreatedNote = _mapper.Map<Note>(NoteEntity);
-                  return CreatedAtRoute("GetNote", new { id = CreatedNote.NoteId }, CreatedNote);
+                //return CreatedAtRoute("GetNote", new { id = CreatedNote.NoteId }, CreatedNote);
+                return Ok(new { noteId = CreatedNote.NoteId, msg= "Note Created Successfully"});
                 }
                 catch (Exception ex)
                     {
@@ -267,7 +268,8 @@ namespace CordFortPersonalNoteManager.Controllers
 
                 _repository.Note.UpdateNote(note);
                 _repository.Save();
-                return Ok("Note Updated Successfully");
+                return Ok(new { noteId = noteEntity.NoteId, msg = "Note Updated Successfully" });
+                //return Ok("");
             }
             catch (Exception ex)
             {
@@ -300,7 +302,7 @@ namespace CordFortPersonalNoteManager.Controllers
 
                 _repository.Note.DeleteNote(noteEntity);
                 _repository.Save();
-                return Ok("Note Deleted Sucessfully");
+                return Ok(new { msg= "Note Deleted Sucessfully" });
             }
             catch (Exception ex)
             {
@@ -342,11 +344,12 @@ namespace CordFortPersonalNoteManager.Controllers
 
                     _repository.Note.UpdateNote(noteEntity);
                     _repository.Save();
-                    return Ok("Note Archived Success");
+                    return Ok(new { noteId = noteEntity.NoteId, msg = "Note Archived Success" });
+                    
                 }
                 else
                 {
-                    return Ok("Note Alredy archived");
+                    return Ok(new { noteId = noteEntity.NoteId, msg = "Note Alredy archived" });
                 }
               //  _mapper.Map(note, noteEntity);
 
@@ -387,11 +390,11 @@ namespace CordFortPersonalNoteManager.Controllers
 
                     _repository.Note.UpdateNote(noteEntity);
                     _repository.Save();
-                    return Ok("Note UnArchived Success");
+                    return Ok(new { noteId = noteEntity.NoteId, msg = "Note UnArchived Success" });
                 }
                 else
                 {
-                    return Ok("Note Alredy UNArchived");
+                    return Ok(new { noteId = noteEntity.NoteId, msg = "Note UnAlredy archived" });
                 }
                 //  _mapper.Map(note, noteEntity);
 
