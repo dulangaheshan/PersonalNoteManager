@@ -49,7 +49,7 @@ namespace web_api_tests
 
         }
         /**
-            * CreateNote
+            * CreateNoteWithoutUserID
             ** Unit test for create note with out user ID 
             * params@{Note}
         */
@@ -72,7 +72,7 @@ namespace web_api_tests
         }
 
         /**
-            * CreateNote
+            * UpdateNoteWithoutUserID
             ** Unit test for update note without user Id
             * params@{userId, nodeId, Note}
         */
@@ -89,6 +89,24 @@ namespace web_api_tests
 
             // Act
             var badResponse = _controller.UpdateNote(1, 4, note);
+            // Assert
+            Assert.IsType<BadRequestObjectResult>(badResponse);
+
+        }
+
+        [Fact]
+        public void Delete()
+        {
+
+            var note = new Note()
+            {
+                Content = "content from unit test",
+                Title = "title from unit test"
+            };
+
+
+            // Act
+            var badResponse = _controller.Delete(1, 4);
             // Assert
             Assert.IsType<BadRequestObjectResult>(badResponse);
 
