@@ -259,7 +259,7 @@ https://www.getpostman.com/collections/a4bab7641ab17859fb0e
 
 *   .NET Core framework is high performance. With recent updates the code gets much more optimized which improves performance at the very end
 
-* MySql is open source and by using RDBMS it will make easy to maintain futher requirments which may conatain many entites and relationships 
+* MySql is RDBMS and it will make easy to maintain futher requirments which may conatain many entites and relationships 
 
 
 
