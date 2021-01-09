@@ -255,30 +255,12 @@ https://www.getpostman.com/collections/a4bab7641ab17859fb0e
 
 
 # choose of technology
+*   used .NetCore and MySql for completing the task as I am much experienced and familiar with the aforementioned technologies
 
-* .NetCore 3.1 
-I'm 
+*   .NET Core framework is high performance. With recent updates the code gets much more optimized which improves performance at the very end
 
-* my sql 
+* MySql is open source and by using RDBMS it will make easy to maintain futher requirments which may conatain many entites and relationships 
 
-
-# improvements
-
-* authentication
-
-add authentication layer and authenticate users before they access their notes,
-[probably JWT]
-
-(currently the request must have userId in it's body field)
-
-* improved logging of the application
-
-currently the app logs internal server error in a same file, log them in to different files
-
-* large notes support
-
-notes which are larger needs to store it's content in some file format, 
-it's status can be saved in a db for faster access.
 
 
 
