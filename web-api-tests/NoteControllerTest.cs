@@ -94,21 +94,19 @@ namespace web_api_tests
 
         }
 
+        /**
+            * DeleteNote
+            ** Unit test for Delete note with user Id and noteId
+            * params@{userId, nodeId, Note}
+        */
         [Fact]
         public void Delete()
         {
 
-            var note = new Note()
-            {
-                Content = "content from unit test",
-                Title = "title from unit test"
-            };
-
-
             // Act
-            var badResponse = _controller.Delete(1, 4);
+            var badResponse = _controller.Delete(1,4);
             // Assert
-            Assert.IsType<BadRequestObjectResult>(badResponse);
+            Assert.IsType<OkObjectResult>(badResponse);
 
         }
 
