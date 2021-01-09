@@ -50,6 +50,7 @@
  
 
 ## postman [collection](https://www.getpostman.com/collections/8b5d7da66f4ac58c158e)
+or inside repo refer PersonalNoteManager.postman_collection,json file
 
 *   Create User
 
