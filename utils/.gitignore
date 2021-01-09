@@ -1,4 +1,4 @@
-./appsettings.Development.json
-./appsettings.production.json
-./obj
-./bin
+appsettings.Development.json
+appsettings.production.json
+obj
+bin
