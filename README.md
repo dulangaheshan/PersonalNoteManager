@@ -1,7 +1,7 @@
 # Personal Note Manager Backend
 
 ## Introduction
-* Backend service you can use for mange your personal notes
+* Backend service which you can integrate with your Clients (mobile, web, pwa..etc) via Rest API End Points to manage personal notes
 
     ### Framework and DataBase
     * .NetCore 3.1
