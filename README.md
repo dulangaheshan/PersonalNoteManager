@@ -43,9 +43,7 @@
     ```
 
 # Feature and API End Points
-## API postman samples
-
-https://www.getpostman.com/collections/a4bab7641ab17859fb0e
+## postman [collection](https://www.getpostman.com/collections/8b5d7da66f4ac58c158e)
 
 *   Create User
 

@@ -28,7 +28,7 @@ namespace CordFortPersonalNoteManager
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                })
+                });
             //.ConfigureAppConfiguration(appConfig =>
             //{
 
