@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CordFortPersonalNoteManager", "CordFortPersonalNoteManager\CordFortPersonalNoteManager.csproj", "{BC1CE14E-A8E8-4ACC-A34A-7F4CF3790B8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web-api-tests", "web-api-tests\web-api-tests.csproj", "{52E74152-E876-416A-9573-89219A422209}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC1CE14E-A8E8-4ACC-A34A-7F4CF3790B8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1CE14E-A8E8-4ACC-A34A-7F4CF3790B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1CE14E-A8E8-4ACC-A34A-7F4CF3790B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1CE14E-A8E8-4ACC-A34A-7F4CF3790B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E74152-E876-416A-9573-89219A422209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E74152-E876-416A-9573-89219A422209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E74152-E876-416A-9573-89219A422209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E74152-E876-416A-9573-89219A422209}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C2AFEE4-3AFD-41B8-BFCF-AF387A534981}
+	EndGlobalSection
+EndGlobal

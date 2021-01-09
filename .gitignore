@@ -1,4 +1,4 @@
-appsettings.Development.json
-appsettings.production.json
-obj
-bin
+CordFortPersonalNoteManager/appsettings.Development.json
+CordFortPersonalNoteManager/appsettings.production.json
+CordFortPersonalNoteManager/obj
+CordFortPersonalNoteManager/bin
