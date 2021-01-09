@@ -59,7 +59,6 @@ https://www.getpostman.com/collections/a4bab7641ab17859fb0e
     * body
 
     ```
-    (IsArchived : true -> it saved as archived)
     {
     "UserName": "testUser"
     }
@@ -257,13 +256,11 @@ https://www.getpostman.com/collections/a4bab7641ab17859fb0e
 
 # choose of technology
 
-* node.js 
-app does not require heavy processing 
-have more I/O operations
+* .NetCore 3.1 
+I'm 
 
-* mongo db
-to save notes and note status
-adding more fields to a scema is less time consuming
+* my sql 
+
 
 # improvements
 
